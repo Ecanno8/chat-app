@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
 
-const Screen1 = ({ navigation }) => {
+const Start = ({ navigation }) => {
     const [name, setName] = useState('');
 
     return (
         <View style={styles.container}>
-            <Text>Hello Screen1!</Text>
+            <Text>Hello!</Text>
             <TextInput
                 style={styles.textInput}
                 value={name}
@@ -15,7 +15,7 @@ const Screen1 = ({ navigation }) => {
             />
             <Button
                 title="Go to Screen 2"
-                onPress={() => navigation.navigate('Screen2', { name: name })}
+                onPress={() => navigation.navigate('Chat', { name: name })}
             />
         </View>
     );
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Screen1;
+export default Start.js;
