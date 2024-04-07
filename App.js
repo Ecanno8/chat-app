@@ -22,6 +22,10 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontWeight: '600',
   },
+  bigRed: {
+    color: 'red',
+    fontSize: 30,
+  },
 });
 
 export default App;
