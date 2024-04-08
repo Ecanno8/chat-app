@@ -8,34 +8,34 @@ const Start = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <ImageBackground source={require('C:\Users\Hunter\careerfoundry\chat-app\assets\A5-chatapp-assets\Background Image.png')} style={styles.bgImage} resizeMode="cover">
+            {/*<ImageBackground source={require('C:\Users\Hunter\careerfoundry\chat-app\assets\A5-chatapp-assets\Background Image.png')} style={styles.bgImage} resizeMode="cover">
                 <Text style={styles.appTitle}>Welcome!</Text>
                 <View style={styles.box}>
                     {/* Input user name \*/}
-                    <TextInput
-                        style={styles.textInput}
-                        value={name}
-                        onChangeText={setName}
-                        placeholder='Type your username here'
+            <TextInput
+                style={styles.textInput}
+                value={name}
+                onChangeText={setName}
+                placeholder='Type your username here'
+            />
+            <Text style={styles.chooseBackgroundColor}>Choose Background Color</Text>
+            {/* Choose background color of chat \*/}
+            <View style={styles.colorButtonsBox}>
+                {colors.map((color, index) => (
+                    <TouchableOpacity
+                        key={index}
+                        style={[styles.colorButton, { backgroundColor: color }, background === color && styles.selected]}
+                        onPress={() => setBackground(color)}
                     />
-                    <Text style={styles.chooseBackgroundColor}>Choose Background Color</Text>
-                    {/* Choose background color of chat \*/}
-                    <View style={styles.colorButtonsBox}>
-                        {colors.map((color, index) => (
-                            <TouchableOpacity
-                                key={index}
-                                style={[styles.colorButton, { backgroundColor: color }, background === color && styles.selected]}
-                                onPress={() => setBackground(color)}
-                            />
-                        ))}
-                    </View>
-                    {/* Start Chat \*/}
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat', { name: name, background: background })}>
-                        <Text style={styles.buttonText}>Start Chatting</Text>
-                    </TouchableOpacity>
-                </View>
-            </ImageBackground>
+                ))}
+            </View>
+            {/* Start Chat \*/}
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat', { name: name, background: background })}>
+                <Text style={styles.buttonText}>Start Chatting</Text>
+            </TouchableOpacity>
         </View>
+            </ImageBackground >
+        </View >
     );
 }
 
