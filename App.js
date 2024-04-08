@@ -1,6 +1,6 @@
 // import the screens
-import Screen1 from './components/Screen1';
-import Screen2 from './components/Screen2';
+import Start from './components/Start';
+import Chat from './components/Chat';
 
 // import react Navigation
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,19 +13,28 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Screen1"
+        initialRouteName="Start"
       >
         <Stack.Screen
-          name="Screen1"
-          component={Screen1}
+          name="Start"
+          component={Start}
         />
         <Stack.Screen
-          name="Screen2"
-          component={Screen2}
+          name="Chat"
+          component={Chat}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default App;
