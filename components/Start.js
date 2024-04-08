@@ -8,7 +8,7 @@ const Start = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <ImageBackground source={require('../img/BackgroundImage.png')} style={styles.bgImage} resizeMode="cover">
+            <ImageBackground source={require('C:\Users\Hunter\careerfoundry\chat-app\assets\A5-chatapp-assets\Background Image.png')} style={styles.bgImage} resizeMode="cover">
                 <Text style={styles.appTitle}>Welcome!</Text>
                 <View style={styles.box}>
                     {/* Input user name \*/}
