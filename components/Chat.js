@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { View, Platform, KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { Bubble, GiftedChat } from "react-native-gifted-chat";
 
