@@ -51,6 +51,12 @@ const Start = ({ navigation }) => {
 
 const styles = StyleSheet.create({
 
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        justifyContent: 'space-evenly',
+
+    },
     bgImage: {
         flex: 1,
         alignItems: 'center',
@@ -70,7 +76,6 @@ const styles = StyleSheet.create({
         height: '44%',
         alignItems: 'center',
         marginBottom: 30,
-        justifyContent: 'space-evenly',
         justifyContent: 'center',
     },
     textInput: {
@@ -81,9 +86,9 @@ const styles = StyleSheet.create({
         opacity: 50,
         padding: 15,
         borderWidth: 1,
-        marginTop: '10%',
+        marginTop: 30,
         marginBottom: 15,
-        top: 5,
+        top: 25,
         borderColor: "#757083"
     },
     chooseBackgroundColor: {

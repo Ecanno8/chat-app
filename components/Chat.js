@@ -64,13 +64,13 @@ const Chat = ({ route, navigation }) => {
             {/* so that the keyboard does not overlap the input  */}
             {Platform.OS === 'android' ? <KeyboardAvoidingView behavior="height" /> : null}
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    }
+    },
 });
 
 export default Chat;
