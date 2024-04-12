@@ -1,11 +1,28 @@
 import { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput, ImageBackground, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ImageBackground, StyleSheet, KeyboardAvoidingView, Alert, Platform } from 'react-native';
+import { getAuth, signInAnonymously } from "firebase/auth";
 
 const Start = ({ navigation }) => {
+    const auth = getAuth();
     const [name, setName] = useState('');
     const [background, setBackground] = useState('');
     const colors = ['#090C08', '#474056', '#8A95A5', '#B9C6AE'];
 
+    // handle the sign-in anonymously process for the user.
+    const signInUser = () => {
+        signInAnonymously(auth)
+            .then((result) => {
+                navigation.navigate("Chat", {
+                    name: name,
+                    background: background,
+                    userID: result.user.uid,
+                });
+                Alert.alert("Signed in Successfully!");
+            })
+            .catch((error) => {
+                Alert.alert("Unable to sign in, try later again.");
+            });
+    };
     return (
         <View style={styles.container}>
             <ImageBackground source={require("../assets/BackgroundImage.png")} style={styles.bgImage} resizeMode="cover">
@@ -34,11 +51,8 @@ const Start = ({ navigation }) => {
                         ))}
                     </View>
                     {/* Start Chat */}
-                    <TouchableOpacity accessibilityLabel="Start Chatting"
-                        accessibilityRole="button"
-                        style={styles.button}
-                        onPress={() => navigation.navigate('Chat', { name: name, background: background })}>
-                        <Text style={styles.buttonText}>Start Chatting</Text>
+                    <TouchableOpacity style={styles.button} onPress={signInUser}>
+                        <Text style={styles.textButton}>Start Chatting</Text>
                     </TouchableOpacity>
                 </View>
                 {Platform.OS === "android" ? (
