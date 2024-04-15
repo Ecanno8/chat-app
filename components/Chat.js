@@ -64,14 +64,14 @@ const Chat = ({ route, navigation, db, isConnected }) => {
 
     const cacheMessages = async (messagesToCache) => {
         try {
-            await AsyncStorage.setItem("message", JSON.stringify(messagesToCache));
+            await AsyncStorage.setItem("messages", JSON.stringify(messagesToCache));
         } catch (error) {
             console.log(error.message);
         }
     };
 
     const loadCachedMessages = async () => {
-        const cachedMessages = (await AsyncStorage.getItem("messages")) || [];
+        const cachedMessages = (await AsyncStorage.getItem("messages")) || "[]";
         setMessages(JSON.parse(cachedMessages));
     };
 
